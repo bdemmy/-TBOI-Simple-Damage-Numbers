@@ -1,6 +1,7 @@
 # ---------------------
 # simple_damage_numbers
 # ---------------------
+mod/*.lua
 
 # MacOS artifacts
 .DS_Store
