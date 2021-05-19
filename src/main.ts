@@ -27,7 +27,7 @@ type DamageIndicator = {
     amount: float;
     timeLeft: int;
     color: KColor;
-};
+}; 
 
 let indicatorArray: DamageIndicator[] = [];
 
@@ -36,7 +36,7 @@ function onNPCRender(npc: EntityNPC, _rO: Vector) {
     if (npc && npc.Visible && npc.IsActiveEnemy(false) && npc.HitPoints > 0 && !npc.IsInvincible() && !npc.IsBoss()) {
         let frame = (npc.HitPoints / npc.MaxHitPoints) * 10;
         let pos = Isaac.WorldToScreen(npc.Position);
-        pos.Y += npc.Size / 2;
+        pos.Y += (npc.Size / 2);
 
         sprite.SetFrame(0)
         sprite.SetOverlayFrame("BarFull", math.ceil(frame))
@@ -81,7 +81,7 @@ function onRender() {
 
         // Reduce the time on the damage
         dmg.timeLeft -= delta;
-    });
+    }); 
 
     indicatorArray = indicatorArray.filter((dmg) => {
         return dmg.timeLeft > 0;
@@ -110,7 +110,7 @@ function onEntityDamaged(target: Entity, amount: number, _f: DamageFlag, _s: Ent
 		}
     }
 
-    return null;
+    return null; 
 }
 
 // Register callbacks
@@ -120,4 +120,4 @@ damageNumbersIs.AddCallback(ModCallbacks.MC_POST_NPC_RENDER, onNPCRender);
 
 // Print an initialization message to the "log.txt" file
 Isaac.DebugString("damage_numbers_is initialized.");
-print("damage_numbers_is initialized.")
+print("damage_numbers_is initialized.") 

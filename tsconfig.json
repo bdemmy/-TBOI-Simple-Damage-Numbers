@@ -12,7 +12,7 @@
 
   // A list of the TypeScript files to compile
   "include": [
-    "./src/**/*.ts",
+    "./src/**/*.ts", "src/backup.txt",
   ],
 
   // TypeScriptToLua settings
@@ -20,5 +20,6 @@
     "luaTarget": "5.3",
     "luaBundle": "./mod/main.lua", // Will bundle all output Lua files into a single file
     "luaBundleEntry": "./src/main.ts",
+    "luaLibImport": "inline"
   },
 }
